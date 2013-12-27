@@ -3,6 +3,12 @@ require 'rest_client'
 require 'mechanize'
 require 'json'
 
+def oembed_retrieve_url(oembed_url, original_url)
+  response = RestClient.get "#{oembed_url}?url=#{original_url}&format=json"
+  parsed = JSON.parse(response)
+  parsed['url']
+end
+
 get '/' do
   ":)"
 end
@@ -24,4 +30,10 @@ get '/imgur' do
   page = mech.get(url)
   image_direct_url = page.at('link[@rel="image_src"]')[:href]
   redirect image_direct_url
+end
+
+# example: /flickr?url=http://www.flickr.com/photos/frontis/9661414791
+get '/flickr' do
+  url = params[:url]
+  redirect oembed_retrieve_url('http://www.flickr.com/services/oembed',url)
 end

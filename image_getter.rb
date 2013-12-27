@@ -10,7 +10,15 @@ def oembed_retrieve_url(oembed_url, original_url)
 end
 
 get '/' do
-  ":)"
+  ':)'
+end
+
+error do
+  'I AM ERROR'
+end
+
+not_found do
+  'dolan pls'
 end
 
 # example: /imgur_gallery?url=http://imgur.com/gallery/VP4kf

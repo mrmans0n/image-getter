@@ -37,3 +37,12 @@ get '/flickr' do
   url = params[:url]
   redirect oembed_retrieve_url('http://www.flickr.com/services/oembed',url)
 end
+
+# example: /xkcd?url=xkcd.com/1305/ 
+get '/xkcd' do
+  url = params[:url]
+  mech = Mechanize.new
+  page = mech.get(url)
+  image_direct_url = page.at('#comic>img')[:src]
+  redirect image_direct_url
+end

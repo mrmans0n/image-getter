@@ -6,3 +6,4 @@ A proxy for getting directly the images of some services based on their public u
 Works with:
 * Imgur (image links + gallery links)
 * Flickr
+* XKCD

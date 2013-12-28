@@ -54,3 +54,12 @@ get '/xkcd' do
   image_direct_url = page.at('#comic>img')[:src]
   redirect image_direct_url
 end
+
+# example: /instagram?url=http://instagram.com/p/ieTMnVJREm/
+get '/instagram' do
+  url = params[:url]
+  mech = Mechanize.new
+  page = mech.get(url)
+  image_direct_url = page.at('meta[property="og:image"]')[:content]
+  redirect image_direct_url
+end

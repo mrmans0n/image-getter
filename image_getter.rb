@@ -67,5 +67,11 @@ end
 # example: /youtube?url=http://www.youtube.com/watch?v=gFzLMGKtY04
 get '/youtube' do
   url = params[:url]
-  redirect oembed_retrieve_param('http://www.youtube.com/oembed/',url,'thumbnail_url')
+  redirect oembed_retrieve_param('http://www.youtube.com/oembed/', url, 'thumbnail_url')
+end
+
+# example: /vimeo?url=http://vimeo.com/82495711
+get '/vimeo' do
+  url = params[:url]
+  redirect oembed_retrieve_param('http://www.vimeo.com/api/oembed.json', url, 'thumbnail_url')
 end

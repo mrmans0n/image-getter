@@ -1,7 +1,7 @@
 image-getter
 ============
 
-A proxy for getting directly the images of some services based on their public url links. 
+A proxy/facade for getting directly the images of some services based on their public url links. 
 
 Services     	 | Endpoint
 -----------------|---------------
@@ -11,13 +11,14 @@ Imgur Gallery	 | /imgur_gallery
 Flickr			 | /flickr
 XKCD			 | /xkcd
 YouTube			 | /youtube
+Vimeo			 | /vimeo
 
-All of them share the same GET parameter, `?url=http://whatever.url.it.is`. 
+All of them share the same `url` GET parameter, and it must be used like in this example: `http://your.server.address/vimeo?url=http://vimeo.com/82495711`. 
 
 It is ready for deployment at Heroku. 
 
-Planned
--------
+TODO
+----
 
 * More providers!
 * Caching of results

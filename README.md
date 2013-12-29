@@ -10,6 +10,7 @@ Imgur			 | /imgur
 Imgur Gallery	 | /imgur_gallery
 Flickr			 | /flickr
 XKCD			 | /xkcd
+YouTube			 | /youtube
 
 All of them share the same GET parameter, `?url=http://whatever.url.it.is`. 
 
